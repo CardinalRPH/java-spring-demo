@@ -1,6 +1,7 @@
 package com.example.demojava.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
 @Entity
 @Table(name = "products")
@@ -13,11 +14,12 @@ public class Product {
     @Column(nullable = false)
     private String name;
 
-    private double price;
+    @Column(nullable = false)
+    private Double price;
 
     public Product() {}
 
-    public Product(Long id, String name, double price) {
+    public Product(Long id, String name, Double price) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -39,11 +41,11 @@ public class Product {
         this.name = name;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 }

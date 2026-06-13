@@ -14,3 +14,8 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  jackson:
+    deserialization:
+      ACCEPT_EMPTY_STRING_AS_NULL_OBJECT: false
+    parser:
+      ALLOW_COERCION_OF_SCALARS: false

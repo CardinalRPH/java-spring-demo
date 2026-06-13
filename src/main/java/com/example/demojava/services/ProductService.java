@@ -22,4 +22,17 @@ public class ProductService {
    public Product addProduct(Product product) {
        return productRepository.save(product);
    }
+
+   public Product updateProduct(Long id, Product detailProduct) {
+       Product product = productRepository.findById(id).orElseThrow(()-> new RuntimeException("Product not found"));
+
+       product.setName(detailProduct.getName());
+       product.setPrice(detailProduct.getPrice());
+       return productRepository.save(product);
+   }
+
+   public void deleteProduct(Long id) {
+       Product product = productRepository.findById(id).orElseThrow(()-> new RuntimeException("Product not found"));
+       productRepository.delete(product);
+   }
 }
