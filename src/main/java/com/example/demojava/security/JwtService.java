@@ -2,6 +2,7 @@ package com.example.demojava.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
 import java.util.Date;
@@ -9,7 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+@Service
 public class JwtService {
+//    need on enviroment
     private final SecretKey SECRET_KEY = Jwts.SIG.HS256.key().build();
 
     private final long JWT_EXPIRATION = 60;
